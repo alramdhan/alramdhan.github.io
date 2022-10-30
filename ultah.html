@@ -1,174 +1,378 @@
-
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>AOS - Animate on scroll library</title>
-		<meta name="description" content="AOS - Animate On Scroll library using CSS3">
-		<meta name="keywords" content="AOS, animate on scroll, css3 scroll animations, simple scroll animations">
-		<meta name="viewport" content="width=device-width">
-		<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-		<!-- <link rel="stylesheet" href="http://localhost:3002/dist/aos.css" /> -->
-		<link rel="stylesheet" href="css/styles.css" />
 
-	</head>
-	<body>
+<head>
+	<meta charset="utf-8">
+	<title>Ultah</title>
+	<meta name="description" content="AOS - Animate On Scroll library using CSS3">
+	<meta name="keywords" content="AOS, animate on scroll, css3 scroll animations, simple scroll animations">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" /> -->
+	<!-- <link rel="stylesheet" href="http://localhost:3002/dist/aos.css" /> -->
+	<link rel="stylesheet" href="dist/aos.css">
+	<link rel="stylesheet" href="css/styles.css" />
+	<style>
+		@font-face {
+			font-family: bloone;
+			src: url('font/bloone_ktf/Kingthings\ Bloone!.TTF');
+		}
 
-		<div class="backgrounds overlay">
-			<div class="background" data-aos="fade-in" data-aos-duration="1500" data-aos-anchor=".section--hero" style="background-image: url('image/pexels-prashant-gautam-3783385.jpg');"></div>
+		@font-face {
+			font-family: summer-days;
+			src: url('font/summer-days/SummerDays-PersonalUse.ttf');
+		}
+
+		@font-face {
+			font-family: unicorn;
+			src: url('font/unicorn-fold-display-personal/Unicorn\ Fold\ -\ Display.ttf');
+		}
+
+		* {
+			font-family: "summer-days";
+		}
+
+		p {
+			font-size: 18px;
+		}
+
+		.ucapan {
+			width: 420px;
+			height: 320px;
+			padding: 75px 0;
+			text-align: center;
+			margin: 25px 0;
+			background: url('image/cover-book.jpg');
+			background-size: cover;
+		}
+	</style>
+</head>
+
+<body>
+	<audio autoplay loop src="media/BrianMcKnight-MarryYourDaughter.mp3" id="background_music"></audio>
+	<div class="backgrounds overlay">
+		<div class="background" data-aos="fade-in" data-aos-duration="1500" data-aos-anchor=".section--hero" style="background-image: url('image/wallpaperbetter.com_1366x768.jpg'); background-size: cover;"></div>
+	</div>
+
+	<header class="hero">
+		<div class="hero-center">
+			<h1 class="hero__logo" data-aos="zoom-in" style="font-family: bloone; margin-bottom: 20px;">SNN</h1>
+			<h2 class="hero__text" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="400">Assalamu'alaikum Nov :)</h2>
+			<p data-aos="fade-up" data-aos-easing="ease" data-aos-delay="600">
+				Tadinya ada sesuatu yang terpikirkan menjadikan hadiah untukmu, namun nanti saja.<br>
+				Ini memang tak istimewa, tak mewah juga, dan tak hebat, hanya do'a dan ungkapan sesederhana ini saja.
+			</p>
 		</div>
+		<span style="font-size: 24px;" class="hero__scroll" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="800">
+			Scroll down <br>
+			<i class="chevron bottom"></i>
+		</span>
+	</header>
 
-		<header class="hero">
-			<div class="hero-center">
-				<h1 class="hero__logo" data-aos="zoom-in">SNN</h1>
-				<h2 class="hero__text" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="400">Assalamu'alaikum wr. wb.</h2>
-			</div>
-			<span class="hero__scroll" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="800">
-				Scroll down <br>
-				<i class="chevron bottom"></i>
-			</span>
-			<a href="http://github.com/michalsnik/aos" target="_blank" class="octocat" data-aos="zoom-out" data-aos-delay="1500">
-				<img src="img/github_octocat.png" alt="">
-			</a>
-		</header>
-
-		<section class="section section--code">
-			<div class="container">
-				<h2 class="section-title">Fade</h2>
-				<div class="code code--small code--left" data-aos="fade-up">
-					<pre><code class="html">&lt;div data-aos="fade-up">&lt;/div></code></pre>
-				</div>
-				<div class="code code--small code--right" data-aos="fade-down">
-					<pre><code>&lt;div data-aos="fade-down">&lt;/div></code></pre>
-				</div>
-				<div class="code code--small code--left" data-aos="fade-right">
-					<pre><code>&lt;div data-aos="fade-right">&lt;/div></code></pre>
-				</div>
-				<div class="code code--small code--right" data-aos="fade-left">
-					<pre><code>&lt;div data-aos="fade-left">&lt;/div></code></pre>
-				</div>
-				<div class="code code--small code--left" data-aos="fade-up-right">
-					<pre><code>&lt;div data-aos="fade-up-right">&lt;/div></code></pre>
-				</div>
-				<div class="code code--small code--right" data-aos="fade-up-left">
-					<pre><code>&lt;div data-aos="fade-up-left">&lt;/div></code></pre>
-				</div>
-				<div class="code code--small code--left" data-aos="fade-down-right">
-					<pre><code>&lt;div data-aos="fade-down-right">&lt;/div></code></pre>
-				</div>
-				<div class="code code--small code--right" data-aos="fade-down-left">
-					<pre><code>&lt;div data-aos="fade-down-left">&lt;/div></code></pre>
+	<section class="section section--code">
+		<div class="container">
+			<h2 class="section-title" style="font-family: unicorn; font-size: 2.5rem; margin: 0 !important;">
+				<img src="image/balloons.png" alt="ballons" width="32" height="32" style="margin: 15px 0;">
+				Barakallah fii umrik
+				<img src="image/balloons.png" alt="ballons" width="32" height="32" style="margin: 15px 0;">
+			</h2>
+			<!-- <div class="code code--small code--left" data-aos="fade-up">
+				<pre><code class="html">&lt;div data-aos="fade-up">&lt;/div></code></pre>
+			</div> -->
+			<div class="row">
+				<div class="ucapan" data-aos="zoom-in" style="position: relative;">
+					<img src="" alt="gambar1.png">
 				</div>
 			</div>
-		</section>
-
-		<section class="section section--code">
-			<div class="container">
-				<h2 class="section-title">Flip</h2>
-				<div class="code code--small code--left" data-aos="flip-left">
-					<pre><code>&lt;div data-aos="flip-left">&lt;/div></code></pre>
-				</div>
-				<div class="code code--small code--right" data-aos="flip-right">
-					<pre><code>&lt;div data-aos="flip-right">&lt;/div></code></pre>
-				</div>
-				<div class="code code--small code--left" data-aos="flip-up">
-					<pre><code>&lt;div data-aos="flip-up">&lt;/div></code></pre>
-				</div>
-				<div class="code code--small code--right" data-aos="flip-down">
-					<pre><code>&lt;div data-aos="flip-down">&lt;/div></code></pre>
+			<div class="row d-flex justify-content-end">
+				<div class="ucapan" data-aos="zoom-in-up">
+					<img src="" alt="gambar2.png">
 				</div>
 			</div>
-		</section>
-
-		<section class="section section--code">
-			<div class="container">
-				<h2 class="section-title">Zoom</h2>
-				<div class="code code--small code--left" data-aos="zoom-in">
-					<pre><code>&lt;div data-aos="zoom-in">&lt;/div></code></pre>
-				</div>
-				<div class="code code--small code--right" data-aos="zoom-in-up">
-					<pre><code>&lt;div data-aos="zoom-in-up">&lt;/div></code></pre>
-				</div>
-				<div class="code code--small code--left" data-aos="zoom-in-down">
-					<pre><code>&lt;div data-aos="zoom-in-down">&lt;/div></code></pre>
-				</div>
-				<div class="code code--small code--right" data-aos="zoom-in-left">
-					<pre><code>&lt;div data-aos="zoom-in-left">&lt;/div></code></pre>
-				</div>
-				<div class="code code--small code--left" data-aos="zoom-in-right">
-					<pre><code>&lt;div data-aos="zoom-in-right">&lt;/div></code></pre>
-				</div>
-
-				<div class="code code--small code--right" data-aos="zoom-out">
-					<pre><code>&lt;div data-aos="zoom-out">&lt;/div></code></pre>
-				</div>
-				<div class="code code--small code--left" data-aos="zoom-out-up">
-					<pre><code>&lt;div data-aos="zoom-out-up">&lt;/div></code></pre>
-				</div>
-				<div class="code code--small code--right" data-aos="zoom-out-down">
-					<pre><code>&lt;div data-aos="zoom-out-down">&lt;/div></code></pre>
-				</div>
-				<div class="code code--small code--left" data-aos="zoom-out-right">
-					<pre><code>&lt;div data-aos="zoom-out-right">&lt;/div></code></pre>
-				</div>
-				<div class="code code--small code--right" data-aos="zoom-out-left">
-					<pre><code>&lt;div data-aos="zoom-out-left">&lt;/div></code></pre>
+			<h2 class="section-title" style="font-family: unicorn; font-size: 2.5rem; margin: 0 !important;">
+				<img src="image/balloons.png" alt="ballons" width="32" height="32" style="margin: 15px 0;">
+				Raef - You&apos;re the one
+				<img src="image/balloons.png" alt="ballons" width="32" height="32" style="margin: 15px 0;">
+			</h2>
+			<div class="row">
+				<div class="ucapan" data-aos="fade-down" style="position: relative;">
+					<img src="image/gambar1.png" alt="first" width="320" height="220">
+					<p style="position: absolute; top: 162px; right: 70px; text-align: start; line-height: 1.15;">
+						won't you be<br>
+						my partner<br>
+						after this world?
+					</p>
 				</div>
 			</div>
-		</section>
-
-		<section class="section section--code">
-			<div class="container">
-				<h2 class="section-title">Different settings examples</h2>
-				<div class="code code--left" data-aos="fade-up" data-aos-duration="3000">
-					<pre><code>&lt;div data-aos="fade-up"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-duration="3000">&#13;&lt;/div></code></pre>
-				</div>
-				<div class="code code--right" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
-					<pre><code>&lt;div data-aos="fade-down"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-easing="linear"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-duration="1500">&#13;&lt;/div></code></pre>
-				</div>
-				<div id="example-anchor" class="code code--left" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
-					<pre><code>&lt;div data-aos="fade-right"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-offset="300"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-easing="ease-in-sine">&#13;&lt;/div></code></pre>
-				</div>
-				<div class="code code--right" data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="500" data-aos-duration="500">
-					<pre><code>&lt;div data-aos="fade-left"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-anchor="#example-anchor"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-offset="500"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-duration="500">&#13;&lt;/div></code></pre>
-				</div>
-				<div class="code code--left" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="0">
-					<pre><code>&lt;div data-aos="fade-zoom-in"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-easing="ease-in-back"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-delay="300"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-offset="0">&#13;&lt;/div></code></pre>
-				</div>
-				<div class="code code--right" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
-					<pre><code>&lt;div data-aos="flip-left"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-easing="ease-out-cubic"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-duration="2000">&#13;&lt;/div></code></pre>
+			<div class="row d-flex justify-content-end">
+				<div class="ucapan" data-aos="fade-down">
+					<img src="image/gambar2.png" alt="first" width="250" height="230">
 				</div>
 			</div>
-		</section>
-
-		<section class="section section--code">
-			<div class="container">
-				<h2 class="section-title">Anchor placement</h2>
-
-				<div class="code code--wider code--left" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-					<pre><code>&lt;div data-aos="fade-up"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-anchor-placement="top-bottom">&#13;&lt;/div></code></pre>
+			<div class="row">
+				<div class="ucapan" data-aos="fade-right">
+					<img src="image/gambar3.png" alt="first" width="330" height="220">
+					<p style="position: absolute; top: 60px; left: 0; right: 0; margin-left: auto; margin-right: auto; text-align: cemter; font-size: 22px;">
+						When we believe it together
+					</p>
 				</div>
-				<div class="code code--wider code--right" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
-					<pre><code>&lt;div data-aos="fade-up"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-anchor-placement="center-bottom">&#13;&lt;/div></code></pre>
-				</div>
-				<div class="code code--wider code--left" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
-					<pre><code>&lt;div data-aos="fade-up"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-anchor-placement="bottom-bottom">&#13;&lt;/div></code></pre>
-				</div>
-
-				<div class="code code--wider code--right" data-aos="fade-up" data-aos-anchor-placement="top-center">
-					<pre><code>&lt;div data-aos="fade-up"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-anchor-placement="top-center">&#13;&lt;/div></code></pre>
-				</div>
-				<div class="code code--wider code--left" data-aos="fade-up" data-aos-anchor-placement="center-center">
-					<pre><code>&lt;div data-aos="fade-up"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-anchor-placement="center-center">&#13;&lt;/div></code></pre>
-				</div>
-				<div class="code code--wider code--right" data-aos="fade-up" data-aos-anchor-placement="bottom-center">
-					<pre><code>&lt;div data-aos="fade-up"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-anchor-placement="bottom-center">&#13;&lt;/div></code></pre>
-				</div>
-
 			</div>
-		</section>
+			<div class="row d-flex justify-content-end">
+				<div class="ucapan" data-aos="fade-left">
+					<img src="image/gambar4.png" alt="first" width="330" height="220">
+				</div>
+			</div>
+			<div class="code code--small code--left" data-aos="fade-up-right">
+				<pre><code>&lt;div data-aos="fade-up-right">&lt;/div></code></pre>
+			</div>
+			<div class="code code--small code--right" data-aos="fade-up-left">
+				<pre><code>&lt;div data-aos="fade-up-left">&lt;/div></code></pre>
+			</div>
+			<div class="code code--small code--left" data-aos="fade-down-right">
+				<pre><code>&lt;div data-aos="fade-down-right">&lt;/div></code></pre>
+			</div>
+			<div class="code code--small code--right" data-aos="fade-down-left">
+				<pre><code>&lt;div data-aos="fade-down-left">&lt;/div></code></pre>
+			</div>
+		</div>
+	</section>
 
-		<section class="section section--more">
+	<section class="section section--code">
+		<div class="container">
+			<h2 class="section-title">Flip</h2>
+			<div class="code code--small code--left" data-aos="flip-left">
+				<pre><code>&lt;div data-aos="flip-left">&lt;/div></code></pre>
+			</div>
+			<div class="code code--small code--right" data-aos="flip-right">
+				<pre><code>&lt;div data-aos="flip-right">&lt;/div></code></pre>
+			</div>
+			<div class="code code--small code--left" data-aos="flip-up">
+				<pre><code>&lt;div data-aos="flip-up">&lt;/div></code></pre>
+			</div>
+			<div class="code code--small code--right" data-aos="flip-down">
+				<pre><code>&lt;div data-aos="flip-down">&lt;/div></code></pre>
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--code">
+		<div class="container">
+			<h2 class="section-title">Zoom</h2>
+			<div class="code code--small code--left" data-aos="zoom-in">
+				<pre><code>&lt;div data-aos="zoom-in">&lt;/div></code></pre>
+			</div>
+			<div class="code code--small code--right" data-aos="zoom-in-up">
+				<pre><code>&lt;div data-aos="zoom-in-up">&lt;/div></code></pre>
+			</div>
+			<div class="code code--small code--left" data-aos="zoom-in-down">
+				<pre><code>&lt;div data-aos="zoom-in-down">&lt;/div></code></pre>
+			</div>
+			<div class="code code--small code--right" data-aos="zoom-in-left">
+				<pre><code>&lt;div data-aos="zoom-in-left">&lt;/div></code></pre>
+			</div>
+			<div class="code code--small code--left" data-aos="zoom-in-right">
+				<pre><code>&lt;div data-aos="zoom-in-right">&lt;/div></code></pre>
+			</div>
+
+			<div class="code code--small code--right" data-aos="zoom-out">
+				<pre><code>&lt;div data-aos="zoom-out">&lt;/div></code></pre>
+			</div>
+			<div class="code code--small code--left" data-aos="zoom-out-up">
+				<pre><code>&lt;div data-aos="zoom-out-up">&lt;/div></code></pre>
+			</div>
+			<div class="code code--small code--right" data-aos="zoom-out-down">
+				<pre><code>&lt;div data-aos="zoom-out-down">&lt;/div></code></pre>
+			</div>
+			<div class="code code--small code--left" data-aos="zoom-out-right">
+				<pre><code>&lt;div data-aos="zoom-out-right">&lt;/div></code></pre>
+			</div>
+			<div class="code code--small code--right" data-aos="zoom-out-left">
+				<pre><code>&lt;div data-aos="zoom-out-left">&lt;/div></code></pre>
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--code">
+		<div class="container">
+			<h2 class="section-title">Different settings examples</h2>
+			<div class="code code--left" data-aos="fade-up" data-aos-duration="3000">
+				<pre><code>&lt;div data-aos="fade-up"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-duration="3000">&#13;&lt;/div></code></pre>
+			</div>
+			<div class="code code--right" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+				<pre><code>&lt;div data-aos="fade-down"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-easing="linear"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-duration="1500">&#13;&lt;/div></code></pre>
+			</div>
+			<div id="example-anchor" class="code code--left" data-aos="fade-right" data-aos-offset="300"
+				data-aos-easing="ease-in-sine">
+				<pre><code>&lt;div data-aos="fade-right"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-offset="300"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-easing="ease-in-sine">&#13;&lt;/div></code></pre>
+			</div>
+			<div class="code code--right" data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="500"
+				data-aos-duration="500">
+				<pre><code>&lt;div data-aos="fade-left"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-anchor="#example-anchor"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-offset="500"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-duration="500">&#13;&lt;/div></code></pre>
+			</div>
+			<div class="code code--left" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300"
+				data-aos-offset="0">
+				<pre><code>&lt;div data-aos="fade-zoom-in"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-easing="ease-in-back"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-delay="300"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-offset="0">&#13;&lt;/div></code></pre>
+			</div>
+			<div class="code code--right" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+				data-aos-duration="2000">
+				<pre><code>&lt;div data-aos="flip-left"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-easing="ease-out-cubic"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-duration="2000">&#13;&lt;/div></code></pre>
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--code">
+		<div class="container">
+			<h2 class="section-title">Anchor placement</h2>
+
+			<div class="code code--wider code--left" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+				<pre><code>&lt;div data-aos="fade-up"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-anchor-placement="top-bottom">&#13;&lt;/div></code></pre>
+			</div>
+			<div class="code code--wider code--right" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+				<pre><code>&lt;div data-aos="fade-up"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-anchor-placement="center-bottom">&#13;&lt;/div></code></pre>
+			</div>
+			<div class="code code--wider code--left" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+				<pre><code>&lt;div data-aos="fade-up"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-anchor-placement="bottom-bottom">&#13;&lt;/div></code></pre>
+			</div>
+
+			<div class="code code--wider code--right" data-aos="fade-up" data-aos-anchor-placement="top-center">
+				<pre><code>&lt;div data-aos="fade-up"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-anchor-placement="top-center">&#13;&lt;/div></code></pre>
+			</div>
+			<div class="code code--wider code--left" data-aos="fade-up" data-aos-anchor-placement="center-center">
+				<pre><code>&lt;div data-aos="fade-up"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-anchor-placement="center-center">&#13;&lt;/div></code></pre>
+			</div>
+			<div class="code code--wider code--right" data-aos="fade-up" data-aos-anchor-placement="bottom-center">
+				<pre><code>&lt;div data-aos="fade-up"&#13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-aos-anchor-placement="bottom-center">&#13;&lt;/div></code></pre>
+			</div>
+
+		</div>
+	</section>
+	<section class="section section--code">
+		<div class="row d-flex justify-content-center mb-2">
+			<button class="btn btn-light d-flex justify-content-center" style="width: 175px;" onclick="show_card()"><span>Click Me</span></button>
+		</div>
+		<div class="container" style="background-color: #e5e1d1; zoom: 0.6;">
+			<div class="row" style="min-width: 300px; background-color: black; color: white; text-align: center; border-radius: 6px; position: relative;">
+				<h1 style="margin-top: 60px; font-family: unicorn; font-size: 56px; transform: scale(0.1); opacity: 0;" id="judulNovi"><i>&quot;Calon Istriku&quot;</i></h1>
+				<h2 style="margin-top: 40px; text-align: center; line-height: .6; font-size: 30px;" id="novi"></h2>
+				<pre id="asciiNov" style="min-width: 726px; zoom: 0; transform: scaleY(0.75); margin-top: -180px; opacity: 0;">
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&&BG5JJJJY55PB#&&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&#P?~^:::::^^^^^^^^^~~7?5G#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#57^:::^^^^^^^^^^^^^^^^^^^^^^^!?5B&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&P?^:.:::^^^^^^^^^^::^:^^^^^^^^:^^^::^^~7YG&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#5!:..:::::::::::::::::::::::::::::::::::::::^^!YB&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#Y~:...:::::::::::::::::::::::::::::::::::::::::::::^~?G&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&P7^:..:::::::::::::::::::::::::::...........::::::::::::::~?G&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#J^::...::::::::::::::::::::::::....................::::::::::::~5&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&?^::::......:::::::::::::..::::.....::^^^^^:::::::.......::::::::::^J#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@G~:::.......................::....^~7?JJYYYYYJJJ???7!~^:.......::::::::^J#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@P^:::..........................:^!?5PPGGGGGGGGGBBBBBBGPPY?!^:......:::::::^J&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@P^.:..........................:~?5PPGGGGBBBBBBBBBBBB#####BBBG5J!^.....:::::::~G@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@P:............................~J5PGGGGBBBBBBB##B################BGY7^.....::::::?&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@G:...........................^7YPGGBBBBB###################&########BP?~...:::::::!B@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@B^...........................~?5PGGBBB####################&&&&&&&&&&####GJ^...::::::^P@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@B^..........................:!Y5PGGBBBBBB#############&&&&&&&&&&&&&&&&&###BP7:..::::::^P@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#^..........................:75PPGGGGBBBBB############&&&&&&&&&&&&&&&&&&&###BGJ^..::::::^P@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#~..........................^?5PPGGGGGBBBBBB#########&&&&&&&&&&&&&&&&&&&&&&####B5~...:::::^G@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&!..........................^J5PGGGGGGBBBBBBB#########&&&&&&&&&&&&&&&&&&&&&&#####BP!..::::::~B@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@?..........................:?5PGGGGGGBBBBBBBB#########&&&&&&&&&&&&&&&&&&&&&&######BP!...::::.~&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@5:.........................:75PGGGGGGGGBBBBBBB#######&&&&&&&&&&&&&&&&&&&&&&&&&#######P!...:::::7&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@B^............. ............~J5PGGGGBGGGBBBBBBBB#####&&&&&&&&&&&&&&&&&&&&&&&&&&&#######P!....::.:P@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&~..............  ..........:!J5PGGGBBBBBBBBBBBBBB####################&&&&&&#####BBBBB##BP~...::..7&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@Y...............  ..........^7JYPPGGGGGGGPPPPPGGGBBBBB####################BBGGP5YYY5555PGBJ:..::..^#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@#^...............  ..........^7JY5P55YJJ????????JJY55PPGGBBBBBBBBBBB##BBBGGP5YJJJJJJJJJYYY55~...:...5@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@J...............    ........:~7JJYJJ?777777777777777?JY55PGBBBBBBBBBBBBGGP55YYY555555555555Y7.......~&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@&^........    ...    ........:!7??7777?JJJYYYYYYYYJJJJYY55PPGGBBBBBBBBBGPPPPPPPPPPGGGGGGGGGGP5!.......Y@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@G:........    ...     .......^!777??JJYY555PPGGGGGPP555555PPGGGBBBBBBBBGGPPPPPPPPGGBBBBBBGGGGGY. ......7&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@?.........    ...      .....:~7???JJJJYYY555PPPPGGGGGGPP5555PGGBBB###BBBGPPP5555P55PPPPPPGGGGGY: .......^B@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@&^.....         .       .....:~7?JJJJJ?????7777!!?JYY555P55555PGGB#####BGPP55YJ?!^:^!~!77!7JYPPY:..........?&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@&: ....                 .....^!?JJJJJ?7!~^^^:...:!~^!77J555YYY5PGB#&&&##BP55Y?7^...:~:~PPJ!!!J55~...........^G@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@B. . .                  ....:~7JYYYJ?7~^^^~7~......~P57!7YP5YY5GBB#&&&&#BGGPY?7!:.....!PGP5J?YPP7.............?@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@G.               .      ....^7JY555YJ7!!!7?J?!~^^~75GG5YJYGP555GGB#&&&&##BBBPYYYJ?777JPGPPPPPGBBP~.............7&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@P.                      ....~?Y5PPPP5YYYYYYYYYYY55PGPPPGGPPPP5PGGB#&&&&&###BBGPP55PPPGGGGGGGBBB#B5~....... .....~#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@P.                      ...:!J5PPPGGGGGPP5YYYYYYY5555PGGGGGGGPGGGB##&&&&#####BBGPPPPGGGGGBBB#####B5^......    ...:P@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@P.                      ...^7Y5PPGGBBBBBBBGGGGGGGGGGGBBBBBBBGGGPGGB#&&&&&########BBBBBBB##########BY:.....      ...!#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@P.                      ...~?Y5PPGGBBBBB########BBBBB#####BBGGPPPGB#&&&&&####&&#############&&&&&##B?......         .?&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@P.                       ..~JY5PPGGBBB####################BGPP55PGB##&&&&#######&&&&&&&&&&&&&&&&&###P^.....           !@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@G.                       .:!JY55PPGGBBB#############&&&##BGGP55PGBB##&&&&&########&&&&&&&&&&&&&&####B7.....       ....^#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@G.                       ..!JYY55PPGGGBBB########&&&&&##BGP5PPGGGBBB##&&&&######B###&&&&&&&&&&&&###BBJ....... .  .....~&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@#.                       ..!JJY555PPGGBBBB#######&&&&##BG55PGBBBBBBBB##&&#######BBBB###&&&&&&&&####BB5:........  ....:P@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@&:                        .~?JJY55PPGGGBBBB#######&####B5JJ5PPP5555PPGGBBBBBBBBBBBBBB###&&&&&#######BP^... ..    ....7@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@&^                        .~?JJYY555PPGGGBBBBB########BPY??JJJ!::^!7JJYYYY?77J5GB###################BP^... ..    ...:G@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@?.                       .^?JJJYYYY5PPGGGGBBBBBB##BBBBP5YJ??7!~!777??JYYYJJJYPG###################BBP:.. ...    ...!&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@P.                       .^7JJJJJYYY55PPGGGGBBBBBBBBBBBGPP55YYY5PGGGGGBBBBBGB####&&#############B#BB5: . ...   ...:G@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@B.                       .:7?JJJJJJYY555PPGGGGGGGBBBBBGGGGGGGGGGGB######################BBBBBB#BBBBBJ: ....    ...?@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@#:                        :!?JJJJJJJYYY55PPPPGGGGGGGPPPPGGGGGPPPPPGGBGBBBBB#######BBBBBBBBBBBBBBBBBG?......    ..^#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@&^                        .~??JJJJJJJYY5555PPPPPPP555Y555555YYYYYYYYY555PPPPGGBBBBBBGGGGGBBBBBBBBBBG!......   ...J@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@&~                        .:!?JJJJJJJJYYY5555555555J??7777!!!!!!!77777777?????JJY555PPPPGGGGBBBBBBB5: .....   ...!&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@!                         .^7??JJJJJJJYY555555YYYJ7^^:^^^^^^^^~~!!!!!~~~!!!!!!!!!!7?Y55PGGGBBBBBGG?. ....   .....~G@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@?                          .~7????JJJJJYY55555YYYJ?7!~~~!!!7??Y55555PPPPPPPP5YY5555555PPGGBBBBBGG5^......   .......^P@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@J                          ..~7????JJJJJYY5555555555YJ?777!77?JY55PPPPPPP55555PGGGGGPPPGGGGGGGGG5~. ....    ....... .!B@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@J                            .^77???????JJYYYY55Y5555YYJ??7777!7??JJJJJJJY55PGGGBBBGGGPPPPGGGPPY~. .....   .......... .!PB##BBBBBGGGGGGGGGGGBBB##&&
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@J                             .^!777???????JJJYYYYYYYYYYYJJJJJJ???JJYYYY55PPGGGGBBGGGPPPPPP555J^... ...    ..........   .^7JYYY5555555PPPPPPPPPPPPP
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@Y                              .:~!7777?777??JJJJJYJJJJYYJJJJJYYJJJJYY55PPPPGGGGGGGGGPPP55YYJ7:. .....    ....  ........ ..~J55YY5555PPPPPPPPPPPPGG
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@5.                               .:~!7777777??JJJJJJJJYYYYYYYYY55555PPPPGGGGGGGGGGGPPPP55YJ7~.  ......   ..... .............^?YJY555555PPPPPPPPPGGG
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@G.                                 .:~!!!777??????JJYYYY5555PPPPPPGGGGGBBBBBBBBGGGGPPP55Y?~:.   .....    ....  ..............:!?YY55555555PPPPPPGGG
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@&^                                   .:^~!!7777???JJJYYY5PPPPPGGGGGGGBBBBBBBBBBGGGGPP5YJ!..   ......     ... .................:!JY5YYYYY55PPPPPGGGG
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@~                                     ..:~~!!777????JJY555PPPGGGGGGGGGGBBBBBBGGGPPPY?~:.  . .......    .... ..................^7JYYYJJJY5PPP55PPPG
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@?                                        ..:^^~!!777??JJYYY555PPPPPPPGGGGGGGGPPP5Y?~.   ..........     ...  ...................^?YYJ?77J5555YJJY5P
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@G.                                           ..:^~~!7777???JJJYYYYY55555555555Y?!:.     ..........     ...  ....................~?J?7!7Y55YYJJ??JY
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&^.                                              ..:^^~~~!!!!!77777777777777!~:..   .   ......... ..   ..   .................. .:!7!!!7Y5YYJ?????J
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@?..                                                  ...::::::::::::::::....       ...............    ..     ...................:^~!!7Y5YJ???????
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@Y.                                                                              ............  ....   ...     ....................:^~~7Y55J777????
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@!.                                                                             ............   ....   ..     ......................:^^!J55?!!777??
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@5..                                                                          ..............  .....   ...      ......................:^^!Y5J!!!!777
+@@@@@@@@@@@@@@@@@@@@@@@@@@@BJ^..                                                                        ..............  ......    ..       .......................:^~?5Y!~~!!77
+@@@@@@@@@@@@@@@@@@@@@@@@@BJ77!..                                                                .   .................   .....     ..       ........................:^!J5?~~~!!7
+@@@@@@@@@@@@@@@@@@@@@@@BY????7:.                                                              ........   ...........   ....      ..         ........................:^7Y57^^~!7
+@@@@@@@@@@@@@@@@@@@@@&Y!~!77?7~..                                                             ....................   ......     ...          ........................:~?Y57^^~!
+@@@@@@@@@@@@@@@@@@@@#Y??!~^~!7~.                                                            ....................... ... .       ..            ........................:~?YY!^^~
+@@@@@@@@@@@@@@@@@@@&Y?JJ?7~~^~~:.         ........                                   .........................  ......         ...          ...........................^!J5Y~::
+@@@@@@@@@@@@@@@@@@@P7?J?J??7~^^^..              ....                              .. ........................    ....         ....          ...........................:^7J5J~:
+@@@@@@@@@@@@@@@@@@G?????????7!~^:.               ........                     .............................     ....          ....            ..........................:~?Y5?^
+@@@@@@@@@@@@@@@@BY?77???????77!~^.                    .....               .............................. .    ....            ...             ................ ..........:~?Y5?
+@@@@@@@@@@@@@@BY7!~~~~!!7????77!^..                       ......        ..............................      .....             ...             ...............  ...........:~?Y5
+@@@@@@@@@@@@@PJ???77!!!!!7777??7~.                              ...      ..   ..... .............. ..        .               ....              ............... ............:!?Y
+@@@@@@@@@@@@BJJJJ?J??JJ???77???7!:.                                       .   ....            .                              .....              .............    ...........^7?
+@@@@@@@@@@@&YJJYYYYJ???JJJ?????77~:.                                                        .           .                    .....              ..............    ...........^7
+@@@@@@@@@@@B7!!77JY55YJ????JJJ?77!~:.                                                                        ..              .....              ................   ...........^
+@@@@@@@@@@@Y~^::::^~!J555YJJ???777!~^.                                                                       ...             ......             .................    ..........
+@@@@@@@@@@&J~^:::::.::^!?Y55?!~~~!!!~:.                                                                    .  ..             .....              .................    ..........
+@@@@@@@@@@BJ!~~~~~^^^::::^7JJ!^::::^^:..                                                                                     .......             .................      .......
+@@@@@@@@@&5J??JYYJ?7!~~^:.:^!77!^:...::..                                                                                    .......             ..................     .......
+@@@@@@@@#PYY55555YJ??77!~^:..:^!!!~::....                                                                                    .........            ....................  .......
+@@@@@@@#P555555555YYYYJJ7!~^^:..:^!!~^:...                                                                                    ........             ...................  .. ....
+@@@@@@#55555555555555555YJ?7!~^::.:^~!~:.                                                                                     .........            ...................  .. ....
+@@@@@&5YY55555555555555555YYJ77~^::.::^~^.                     .                                                               ..........           ....................   ....
+@@@@@@#PJJY55555555555555555YYJ?7!^^:::^~^.                                      ..                                              ........      .    ........................ ..
+@@@@@@@@@BJJYY5555555555555555YJ?77~^^::^^.                                                                                     ...........   ..  .......................     .
+@@@@@@@@@@P?JJYYYY55555555555555YJ?7~~^^::..                                                                                    ...........   .  ........................ .....
+@@@@@@@@@@GJJJJJJYYYY5555555555555YJ?!~^^:...                                                                                    ..........   .   ....................... .....
+@@@@@@@@@@PJJJJJJJJYYYY5555555555555YJ7~^:.....                                                               ......               ............................................
+@@@@@@@@@@GJJYYYJJJJJJYYY555555555555YJ!^^:......                                                           .........              .....................................  .....
+@@@@@@@@@@BYYYYYYYJYYYYYYYYY5555555555Y7~::.......                                                        ...:::::::..              ...........................................
+@@@@@@@@@@B5Y555YYYYYYYYYYYYYY555555555J7^:.........                                                      ..::::::::..                 ....................................  ..
+@@@@@@@@@@B5Y555555YYYYYYYJYYYYYYY5555555Y?~:. .......                                                    .::^^^^::::..                 ..... .................................
+@@@@@@@@@BY55555555YYYYYYJJYYJJYYYYY55555555Y7~:........                                                 ...:^^^^^^::...                        .....   .......................
+@@@@@&B5?7J5555555YYYYYYYYYYJJJJJJJYYYYY55555P557. ........                                              ...:^^^^^^:::..                     ..  .   ..........................
+@@@@BY????J555555555YYYYYYYJJJJJJJJJJJJJYYYY555P5~. .....    ...                                         ...::^^^^^^:::..                  .       ............................
+@@@P??????JY555555555YYYYYYYYJJJJJJJJ???JJJYYYY55Y:   .... ......                                        ...:::^^^^^^::..                   .  ...............  ...............
+@&5???????JY55555555555YYYYYYYYYYYJJJ?????7??JJY55Y^  ........ ...                      ..                ....::^^^^^^::.                     ................  ...............
+&Y!!777???JY555555555555555555YYYYYYYJJ??77777?JJ555~  ...........                     ..                 .....::^^^^^::..                  ...................................
+G!~~!77?JJY55555555555555555555YY55555YYYJJ??????JY55!.  ...........                   .                 ......:::^^^^::..                 ...................... .............
+J~~~~!7?J5PP5JJ??JJY5555555555555555555YYYYYYYJJJ?Y5PP!.    ...... .                ....                    ....::^^^^::..                 ....................................
+					</pre>
+				<img src="image/roses-g390f28b0c_1920.png" alt="mawar"
+					style="position: absolute; bottom: 0; opacity: 0;">
+			</div>
+			<div style="min-height: 15px; background: url('image/flowers-ga30f27919_1280.png'); background-size: cover; display: none; text-align: center;"
+				id="div_ucapan">
+				<img src="image/photo1667103361.png" alt="bgFlower" height="200">
+			</div>
+		</div>
+	</section>
+
+	<!-- <section class="section section--more">
 			<div class="container">
 				<div class="section-group">
 					<h3>Get it</h3>
@@ -194,7 +398,7 @@
 
 					<h4>JS</h4>
 					<pre><code>&lt;script src="https://unpkg.com/aos@2.3.1/dist/aos.js">&lt;/script></code></pre>
-        </div>
+        		</div>
 
 				<div class="section-group">
 					<h3>Initialize AOS</h3>
@@ -202,35 +406,91 @@
 				</div>
 
 			</div>
-		</section>
+		</section> -->
 
-		<footer class="footer">
-			<div class="container">
+	<footer class="footer">
+		<div class="container">
+			&nbsp;
+		</div>
+	</footer>
 
-			</div>
-		</footer>
+	<!-- <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script> -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
 
-		<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+	<script src="dist/aos.js"></script>
+	<!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
+	<!-- <script src="http://localhost:3002/dist/aos.js"></script> -->
 
-		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-		<!-- <script src="http://localhost:3002/dist/aos.js"></script> -->
+	<script>
+		var i = 0;
+		var txt = `
+			Kau memang tak semulia khadijah, setaqwa aisyah, atau setabah fatimah.\n
+			kau hanya wanita akhir zaman yang berusaha menjadi shalihah. Aku mendukungmu.\n
+			Kau bukan juga makhluk yang luar biasa, akulah yang akan membuatmu luar biasa.\n
+			karena pernikahan tidak menyatukan dua orang yang sempurna,\n
+			tetapi satu sama lain saling menerima dengan sempurna.
+		`;
+		var speed = 100;
 
-		<script>
-			AOS.init({
-				easing: 'ease-out-back',
-				duration: 1000
+		function show_card() {	
+			$('#judulNovi').animate({
+				opacity: 1,
+			}, {
+				duration: 1000,
+				step: function(now, fx) {
+					$(this).css("transform", "scale("+now+")");
+				}
 			});
-		</script>
 
-		<script>
-			hljs.initHighlightingOnLoad();
+			setTimeout(() => {
+				typing();
+			}, 1200);
+		}
 
-			$('.hero__scroll').on('click', function(e) {
-				$('html, body').animate({
-					scrollTop: $(window).height()
+		function typing() {
+			if (i < txt.length) {
+				document.getElementById('novi').innerHTML += txt.charAt(i);
+				if(txt.charAt(i) == "\n") document.getElementById('novi').innerHTML += "<br>";
+				i++;
+				setTimeout(typing, speed);
+			} else {
+				$('#asciiNov').animate({
+					opacity: 1,
+					zoom: 0.6
+				}, 1000);
+
+				setTimeout(() => {
+					$('img[alt="mawar"]').animate({
+						opacity: 1
+					}, 1000);
+				}, 500);
+
+				setTimeout(() => {
+					$('#div_ucapan').animate({
+						height: "toggle"
+					}, 3000);
 				}, 1200);
-			});
-		</script>
-	</body>
+			}
+		}
+	</script>
+
+	<script>
+		AOS.init({
+			easing: 'ease-out-back',
+			duration: 1000
+		});
+	</script>
+
+	<script>
+		hljs.initHighlightingOnLoad();
+
+		$('.hero__scroll').on('click', function (e) {
+			$('html, body').animate({
+				scrollTop: $(window).height()
+			}, 1200);
+		});
+	</script>
+</body>
+
 </html>
